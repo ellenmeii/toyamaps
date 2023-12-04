@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ToyaMaps UGM</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<!-- Tambahkan link untuk font Poppins -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+	<!-- Tambahkan link untuk Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<style>
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+		}
+
+		#map {
+			height: 100%;
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+
+		/* Floating Title Style */
+		.floating-title {
+			position: absolute;
+			top: 10px;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: rgba(255, 255, 255, 0.8);
+			color: #2391d9;
+			border-radius: 30px;
+			padding: 10px;
+			font-family: 'Poppins', sans-serif;
+			font-size: 18px;
+			font-weight: bold;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			z-index: 1000;
+			transition: background-color 0.3s ease;
+		}
+
+		.floating-title:hover {
+			background-color: rgba(255, 255, 255, 1);
+		}
+
+		/* Style untuk tombol reload */
+		.reload-button {
+			background-color: #2391d9;
+			color: #fff;
+			border: none;
+			border-radius: 50%;
+			padding: 10px;
+			font-size: 20px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.reload-button:hover {
+			background-color: #1371bd;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="map">
+		<!-- Floating Title -->
+		<div class="floating-title">ToyaMaps UGM</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	<script>
+		// ugm
+		var map = L.map('map').setView([-7.77017, 110.37780], 13);
+
+		// basemap
+		var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 20
+		}).addTo(map);
+
+		// Export Button
+		var showExport = '<button onclick="loadlayer()" title="Refresh map" class="reload-button"><i class="fas fa-sync-alt"></i></button>';
+
+		var showExportButton = new L.Control({ position: "topright" });
+		showExportButton.onAdd = function (map) {
+			this._div = L.DomUtil.create('div');
+			this._div.innerHTML = showExport
+			return this._div;
+		};
+		showExportButton.addTo(map);
+
+		function loadlayer() {
+			var point = L.geoJson(null, {
+				onEachFeature: function (feature, layer) {
+					var popupContent = "<h4>" + feature.properties.nama + "</h4>" +
+						"<p>" + feature.properties.jenis + "</p>";
+					layer.on({
+						click: function (e) {
+							point.bindPopup(popupContent);
+						},
+					});
+				},
+			});
+			$.getJSON("https://script.google.com/macros/s/AKfycbxGOIwvNDWnIwRhPlZbBxe3AHktm8nYDdP_esLTToyyRZPOEe4PD3xz52yAFsv-xhFO-Q/exec", function (data) {
+				point.addData(data);
+				map.addLayer(point);
+				map.fitBounds(point.getBounds());
+			});
+		}
+
+		loadlayer();
+	</script>
+</body>
+
+</html>

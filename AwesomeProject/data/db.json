@@ -1,0 +1,28 @@
+{
+  "mahasiswa": [
+    {
+      "id": 1,
+      "nama": "ELLEN MEILIANDINI",
+      "nim": "21/481545/SV/19812",
+      "kelas": "B",
+      "icon": "robot",
+      "color": "#1A1A1A"
+    },
+    {
+      "nama": "ALIPIA",
+      "nim": "21/989898/SV/99999",
+      "kelas": "B",
+      "icon": "cat",
+      "color": "#1A1A1A",
+      "id": 2
+    },
+    {
+      "nama": "BALKISH",
+      "nim": "21/12345/SV/54321",
+      "kelas": "B",
+      "icon": "suse",
+      "color": "#1A1A1A",
+      "id": 3
+    }
+  ]
+}

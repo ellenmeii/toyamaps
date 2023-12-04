@@ -1,0 +1,118 @@
+{
+  "mahasiswa": [
+    {
+      "id": 1,
+      "nama": "ELLEN MEILIANDINI",
+      "nim": "21/481545/SV/19812",
+      "kelas": "B",
+      "icon": "robot",
+      "color": "#1A1A1A"
+    },
+    {
+      "nama": "ALIPIA",
+      "nim": "21/989898/SV/99999",
+      "kelas": "B",
+      "icon": "cat",
+      "color": "#1A1A1A",
+      "id": 2
+    },
+    {
+      "nama": "BALKISH",
+      "nim": "21/12345/SV/54321",
+      "kelas": "B",
+      "icon": "suse",
+      "color": "#1A1A1A",
+      "id": 3
+    },
+    {
+      "nama": "edit",
+      "nim": "2112345",
+      "kelas": "B",
+      "jeniskelamin": "Perempuan",
+      "color": "#1a1a1a",
+      "icon": "frown",
+      "id": 4
+    },
+    {
+      "nama": "tes",
+      "nim": "2112345",
+      "kelas": "B",
+      "jeniskelamin": "Perempuan",
+      "color": "#1a1a1a",
+      "icon": "download",
+      "id": 7
+    },
+    {
+      "nama": "Taylor Swift",
+      "nim": "12345600",
+      "kelas": "B",
+      "jeniskelamin": "Perempuan",
+      "color": "#000000",
+      "icon": "headset",
+      "id": 8
+    },
+    {
+      "nama": "murid1",
+      "nim": "2334323",
+      "kelas": "b",
+      "jeniskelamin": "Perempuan",
+      "color": "#000000",
+      "icon": "headset",
+      "id": 9
+    },
+    {
+      "nama": "mahasiswa",
+      "nim": "2112999",
+      "kelas": "A",
+      "jeniskelamin": "Perempuan",
+      "color": "#1a1a1a",
+      "icon": "frown",
+      "id": 10
+    },
+    {
+      "nama": "mahasiswa",
+      "nim": "2112999",
+      "kelas": "A",
+      "jeniskelamin": "Perempuan",
+      "color": "#1a1a1a",
+      "icon": "frown",
+      "id": 11
+    },
+    {
+      "nama": "mahasiswa",
+      "nim": "2112999",
+      "kelas": "B",
+      "jeniskelamin": "Perempuan",
+      "color": "#1a1a1a",
+      "icon": "frown",
+      "id": 12
+    },
+    {
+      "nama": "mahasiswa",
+      "nim": "2112999",
+      "kelas": "B",
+      "jeniskelamin": "Perempuan",
+      "color": "#1a1a1a",
+      "icon": "frown",
+      "id": 13
+    },
+    {
+      "nama": "mahasiswa",
+      "nim": "2112999",
+      "kelas": "B",
+      "jeniskelamin": "Perempuan",
+      "color": "#1a1a1a",
+      "icon": "frown",
+      "id": 14
+    },
+    {
+      "nama": "mahasiswa",
+      "nim": "2112345",
+      "kelas": "B",
+      "jeniskelamin": "Perempuan",
+      "color": "#1a1a1a",
+      "icon": "frown",
+      "id": 15
+    }
+  ]
+}
